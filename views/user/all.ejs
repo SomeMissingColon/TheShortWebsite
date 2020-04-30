@@ -4,6 +4,16 @@
 	<title>show all users</title>
 </head>
 <body>
+	<div class="users">
+		<% for( i = 0; i < list.length; i++  ){ %>
+			<h1>name:<%= list[i].name  %>
+				-
+				age:<%= list[i].age  %>
+				-
+				size:<%= list[i].size  %>m
+			</h1>
 
+		<% } %>
+	</div>	
 </body>
 </html>
