@@ -1,14 +1,14 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const  db = require('./db');
-var app = express();
-var expressLayouts = require('express-ejs-layouts')
+const app = express();
+
+const expressLayouts = require('express-ejs-layouts')
 //getting routers
 const userController = require("./controllers/userController");
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,9 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routing controllers
-
-
 app.use('/users', userController);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
